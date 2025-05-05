@@ -5,15 +5,20 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
+    
     CommonModule,
     RouterOutlet,
     NavbarComponent,
     HomeComponent,
+    RouterModule,
+    
     ProjectsComponent,
     ContactComponent,
   ],

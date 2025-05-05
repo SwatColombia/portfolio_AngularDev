@@ -4,7 +4,7 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: '/projects', component: ProjectsComponent },
+  { path: 'projects', component: ProjectsComponent },
 ];
 
 const routing = RouterModule.forRoot(routes);
