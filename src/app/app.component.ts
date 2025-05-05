@@ -15,7 +15,8 @@ import { ContactComponent } from './pages/contact/contact.component';
     NavbarComponent,
     HomeComponent,
     ProjectsComponent,
-    ContactComponent,
+    ContactComponent,  
+    
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
