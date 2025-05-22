@@ -8,8 +8,14 @@
             <p class="mt-3 text-gray-500 dark:text-gray-400">Chat to our friendly team.</p>
         </div>
 
-        <img class="object-cover w-full h-auto mt-6 mb-14 rounded-lg lg:h-128" src="../../../assets/aquarium.jpg" alt="">
-        
+        <div #zoomContainer class="relative overflow-hidden w-full h-auto mt-6 mb-14 rounded-lg">
+            <img
+                #zoomImage
+                src="../../../assets/aquarium.jpg"
+                alt="Imagen con zoom"
+                class="object-cover w-full h-auto transition-transform duration-200 rounded-lg"
+            />
+            </div>
         <div class="grid grid-cols-1 gap-12 mt-18 lg:grid-cols-3 sm:grid-cols-2 ">
             <div class="p-4 rounded-lg bg-blue-50 md:p-6 dark:bg-gray-800">
                 <span class="inline-block p-3 text-blue-500 rounded-lg bg-blue-100/80 dark:bg-gray-700">
