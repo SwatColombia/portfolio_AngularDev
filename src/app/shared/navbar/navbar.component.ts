@@ -13,5 +13,17 @@ import { RouterOutlet } from '@angular/router';
 })
 export class NavbarComponent {
 
-  constructor () { }
+menuAbierto: boolean = false;
+
+  constructor () { 
+
+    /* toggleMenu() {
+      this.menuAbierto = !this.menuAbierto;
+  }
+
+    verPerfil() {
+    this.menuAbierto = false;
+  } */
 }
+}
+

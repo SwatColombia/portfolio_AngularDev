@@ -45,7 +45,7 @@ export class HomeComponent implements AfterViewInit{
       start: "top 60%",         // inicia cuando el top del elemento llega al 80% de la pantalla
       toggleActions: "play none none none", // solo se ejecuta una vez
           },
-        duration: 12,
+        duration: 10,
         opacity: 0,
         y: 280
       });
@@ -55,7 +55,7 @@ export class HomeComponent implements AfterViewInit{
       start: "top 70%",         // inicia cuando el top del elemento llega al 80% de la pantalla
       toggleActions: "play none none none", // solo se ejecuta una vez
           },
-        duration: 16,
+        duration: 12,
         opacity: 0,
         y: 300
       });
