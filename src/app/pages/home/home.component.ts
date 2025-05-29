@@ -1,20 +1,97 @@
-import { AfterViewInit, Component } from '@angular/core';
-import { gsap } from 'gsap';
-//import { ScrollTrigger } from 'gsap/ScrollTrigger';
-//gsap.registerPlugin(ScrollTrigger);
+import {
+  Component,
+  AfterViewInit,
+  ElementRef,
+  Renderer2
+} from '@angular/core';
+import { gsap} from 'gsap';
+import * as THREE from 'three';
+import { WebGLRenderer } from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { PLYLoader } from 'three/examples/jsm/loaders/PLYLoader.js';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  
 })
-export class HomeComponent implements AfterViewInit{
+export class HomeComponent implements AfterViewInit {
+  constructor(private el: ElementRef, private renderer2: Renderer2) {}
 
   ngAfterViewInit(): void {
     
-    
+    const container = this.el.nativeElement.querySelector('#three-container');
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 100);
+    camera.position.set(7, 4, 1);
+
+    const renderer = new WebGLRenderer({ antialias: true });
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1;
+
+    this.renderer2.appendChild(container, renderer.domElement);
+
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.target.set(0, 1, 0);
+    controls.update();
+
+    const ambient = new THREE.HemisphereLight(0x7fff00, 0x8d8d8d, 0.20);
+    scene.add(ambient);
+
+    const plane = new THREE.Mesh(
+      new THREE.PlaneGeometry(200, 200),
+      new THREE.MeshLambertMaterial({ color: 0xbcbcbc })
+    );
+    plane.rotation.x = -Math.PI / 2;
+    plane.position.y = -1;
+    plane.receiveShadow = true;
+    scene.add(plane);
+
+    const spotLight = new THREE.SpotLight(0xf24b00,100);
+    spotLight.position.set(3, 5, 3);
+    spotLight.angle = Math.PI / 7;
+    spotLight.penumbra = 1;
+    spotLight.decay = 2;
+    spotLight.castShadow = true;
+    scene.add(spotLight);
+
+    const helper = new THREE.SpotLightHelper(spotLight);
+    scene.add(helper);
+
+    const loader = new PLYLoader();
+    loader.load('assets/models/Lucy100k.ply', (geometry) => {
+      geometry.scale(0.0024, 0.0024, 0.0024);
+      geometry.computeVertexNormals();
+
+      const mesh = new THREE.Mesh(
+        geometry,
+        new THREE.MeshLambertMaterial({ color: 0xf08080 })
+      );
+      mesh.rotation.y = -Math.PI / 2;
+      mesh.position.y = 0.8;
+      mesh.castShadow = true;
+      mesh.receiveShadow = true;
+      scene.add(mesh);
+    });
+
+    function animate() {
+      const time = performance.now() / 3000;
+      spotLight.position.x = Math.cos(time) * 2.5;
+      spotLight.position.z = Math.sin(time) * 2.5;
+      helper.update();
+      renderer.render(scene, camera);
+    }
+
+    renderer.setAnimationLoop(animate);
+  }
+  ngOnInit() {
       gsap.from("#title_home", {
         duration: 3, opacity: 0
         , y: -80
@@ -61,5 +138,6 @@ export class HomeComponent implements AfterViewInit{
       });
     }
   }
-
+  
+    
 

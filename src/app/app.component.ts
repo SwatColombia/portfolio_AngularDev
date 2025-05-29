@@ -16,11 +16,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     RouterOutlet,
     NavbarComponent,
-    HomeComponent,
     RouterModule,
-    
-    ProjectsComponent,
-    ContactComponent,  
     
   ],
   templateUrl: './app.component.html',
