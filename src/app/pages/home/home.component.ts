@@ -9,12 +9,14 @@ import * as THREE from 'three';
 import { WebGLRenderer } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { PLYLoader } from 'three/examples/jsm/loaders/PLYLoader.js';
-import { NavbarComponent } from "../../shared/navbar/navbar.component";
+import { SharedModule } from '../../shared/shared.module';
+
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavbarComponent],
+  imports: [SharedModule],
   templateUrl: './home.component.html',
   
 })

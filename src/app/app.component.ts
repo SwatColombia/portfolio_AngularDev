@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from './shared/shared.module';
 
 
 @Component({
@@ -15,8 +16,9 @@ import { RouterModule } from '@angular/router';
     
     CommonModule,
     RouterOutlet,
-    NavbarComponent,
     RouterModule,
+    SharedModule,
+    
     
   ],
   templateUrl: './app.component.html',
