@@ -25,7 +25,7 @@ export class HomeComponent implements AfterViewInit {
     const container = this.el.nativeElement.querySelector('#three-container');
 
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 100);
+    const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.5, 100);
     camera.position.set(7, 4, 1);
 
     const renderer = new WebGLRenderer({ antialias: true });
@@ -42,7 +42,7 @@ export class HomeComponent implements AfterViewInit {
     controls.target.set(0, 1, 0);
     controls.update();
 
-    const ambient = new THREE.HemisphereLight(0x7fff00, 0x8d8d8d, 0.20);
+    const ambient = new THREE.HemisphereLight(0x7fff00, 0x8d8d8d, 0.30);
     scene.add(ambient);
 
     const plane = new THREE.Mesh(
