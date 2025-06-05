@@ -20,13 +20,13 @@ export class ContactComponent implements AfterViewInit {
 
     container.addEventListener('mousemove', (e: MouseEvent) => {
       const rect = container.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 100;
-      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      const x = ((e.clientX - rect.left) / rect.width) * 50;
+      const y = ((e.clientY - rect.top) / rect.height) * 50;
 
       gsap.to(image, {
-        scale: 2,
+        scale: 0,
         transformOrigin: `${x}% ${y}%`,
-        duration: 0.3,
+        duration: 0.5,
         ease: 'power2.out',
       });
     });
@@ -38,5 +38,15 @@ export class ContactComponent implements AfterViewInit {
         duration: 0.3,
       });
     });
+    gsap.from("#iconos_home", {
+      scrollTrigger: {
+      trigger: "#iconos_home", // el elemento que activa la animación
+      start: "top 60%",         // inicia cuando el top del elemento llega al 80% de la pantalla
+      toggleActions: "play none none none", // solo se ejecuta una vez
+          },
+        duration: 4,
+        opacity: 0,
+        y: 300
+      });
   }
 }

@@ -42,7 +42,7 @@ export class HomeComponent implements AfterViewInit {
     controls.target.set(0, 1, 0);
     controls.update();
 
-    const ambient = new THREE.HemisphereLight(0x7fff00, 0x8d8d8d, 0.30);
+    const ambient = new THREE.HemisphereLight(0x000080, 0x8d8d8d, 0.30);
     scene.add(ambient);
 
     const plane = new THREE.Mesh(
@@ -54,9 +54,9 @@ export class HomeComponent implements AfterViewInit {
     plane.receiveShadow = true;
     scene.add(plane);
 
-    const spotLight = new THREE.SpotLight(0xf24b00,100);
-    spotLight.position.set(3, 5, 3);
-    spotLight.angle = Math.PI / 7;
+    const spotLight = new THREE.SpotLight(0xc80031 ,200);
+    spotLight.position.set(5, 7, 7);
+    spotLight.angle = Math.PI / 8;
     spotLight.penumbra = 1;
     spotLight.decay = 2;
     spotLight.castShadow = true;
@@ -136,6 +136,19 @@ export class HomeComponent implements AfterViewInit {
         opacity: 0,
         y: 300
       });
+      gsap.from("#button_container", {
+        scrollTrigger: {
+          trigger: "#button_container",
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+        duration: 8,
+        opacity: 0,
+        y: 300,
+        ease: "bounce.out"
+      });
+      
+      
     }
   }
   
