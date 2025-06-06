@@ -12,63 +12,55 @@
     <div
       class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
       style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
-    ></div>
-
-
-  <!-- Navbar Component -->
-  <div>
-
-    <app-navbar></app-navbar>
-
-  </div>
-
-
-  <div class="mx-auto max-w-7xl px-6 lg:px-8 z-10 relative">
-   
-    <div class="mx-auto max-w-2xl lg:mx-0">
-      <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl" id="title_home">
-        Conoce mi Portafolio.
-      </h2>
-      <p class="mt-24 text-2xl leading-8 text-semibold text-gray-100">
-        ¿Listo para sumergirte en el universo de la animación?
-        ¡Explora mi portafolio y déjate inspirar por lo que puedo crear!
-      </p>
+      ></div>
     </div>
-    <div class="mx-auto mt-40 max-w-2xl lg:mx-0 lg:max-w-none">
-    <div class="mx-auto mt-48 max-w-2xl lg:mx-0 lg:max-w-none">
-      <dl class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
-        <div class="flex flex-col-reverse" id="subtitle_one">
-          <dt class="text-3xl leading-7 text-gray-300">Conocimientos</dt>
-          <dd class="text-3xl font-bold leading-9 tracking-tight text-white">01.</dd>
+    <!-- Navbar Component -->
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 z-10 relative">
+      <div class="mx-auto max-w-2xl lg:mx-0">
+        <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl" id="title_home">
+          Conoce mi Portafolio.
+        </h2>
+        <p class="mt-24 text-2xl leading-8 text-semibold text-gray-100">
+          ¿Listo para sumergirte en el universo de la animación?
+          ¡Explora mi portafolio y déjate inspirar por lo que puedo crear!
+        </p>
+      </div>
+      <div class="mx-auto mt-40 max-w-2xl lg:mx-0 lg:max-w-none">
+        <div class="mx-auto mt-48 max-w-2xl lg:mx-0 lg:max-w-none">
+          <dl class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="flex flex-col-reverse" id="subtitle_one">
+              <dt class="text-3xl leading-7 text-gray-300">Conocimientos</dt>
+              <dd class="text-3xl font-bold leading-9 tracking-tight text-white">01.</dd>
+            </div>
+            <div class="flex flex-col-reverse " id="subtitle_two">
+              <dt class="text-3xl leading-7 text-gray-300">Practica</dt>
+              <dd class="text-3xl font-bold leading-9 tracking-tight text-white">02.</dd>
+            </div>
+            <div class="flex flex-col-reverse" id="subtitle_three">
+              <dt class="text-3xl leading-7 text-gray-300">Experiencia</dt>
+              <dd class="text-3xl font-bold leading-9 tracking-tight text-white">03.</dd>
+            </div>
+            <div class="flex flex-col-reverse" id="subtitle_four">
+              <dt class="text-3xl leading-7 text-gray-300">Autonomía</dt>
+              <dd class="text-3xl font-bold leading-9 tracking-tight text-white">04.</dd>
+            </div>
+          </dl>
         </div>
-        <div class="flex flex-col-reverse " id="subtitle_two">
-          <dt class="text-3xl leading-7 text-gray-300">Practica</dt>
-          <dd class="text-3xl font-bold leading-9 tracking-tight text-white">02.</dd>
+        <div>
+          <div class="flex justify-center pt-48 w-full sm:pt-24 md:pt-16 lg:pt-24" id="button_container">
+            <a
+              href="https://youtu.be/uA5R1EmBSXI"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-22 px-12 py-8 bg-blue-600 text-white text-3xl font-extrabold rounded-full shadow transition transform hover:bg-lime-400 hover:text-black hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            >
+              DEMO REEL
+            </a>
+          </div>
         </div>
-        <div class="flex flex-col-reverse" id="subtitle_three">
-          <dt class="text-3xl leading-7 text-gray-300">Experiencia</dt>
-          <dd class="text-3xl font-bold leading-9 tracking-tight text-white">03.</dd>
-        </div>
-        <div class="flex flex-col-reverse" id="subtitle_four">
-          <dt class="text-3xl leading-7 text-gray-300">Autonomía</dt>
-          <dd class="text-3xl font-bold leading-9 tracking-tight text-white">04.</dd>
-        </div>
-      </dl>
-    </div>
-    <div>
-      <div class="flex justify-center pt-48 w-full sm:pt-24 md:pt-16 lg:pt-24" id="button_container">
-        <a
-          href="https://youtu.be/uA5R1EmBSXI"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="mt-22 px-12 py-8 bg-blue-600 text-white text-3xl font-extrabold rounded-full shadow transition transform hover:bg-lime-400 hover:text-black hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400"
-        >
-          DEMO REEL
-        </a>
       </div>
     </div>
+    <!-- Contenedor del canvas de Three.js -->
+    <div id="three-container" class="absolute inset-0 z-0"></div>
   </div>
-
-  <!-- Contenedor del canvas de Three.js -->
-  <div id="three-container" class="absolute inset-0 z-0"></div>
 
