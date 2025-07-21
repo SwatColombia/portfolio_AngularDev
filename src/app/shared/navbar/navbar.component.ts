@@ -13,8 +13,11 @@ import { CommonModule } from '@angular/common';
 })
 export class NavbarComponent {
 
-menuAbierto: boolean = false;
+isMobileMenuOpen: boolean = false;
 
+toggleMobileMenu() {
+  this.isMobileMenuOpen = !this.isMobileMenuOpen;
+}
   constructor () { 
 
     /* toggleMenu() {
